@@ -1,0 +1,95 @@
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+r = 0
+
+i = 1
+
+Ind_income  = [5,15,20,25,30,35,40]
+
+income_tom = []
+
+ind_beq = []
+
+Ws = 15
+
+Wn = 0
+
+H  = 12.5
+
+for ind in Ind_income:
+
+   
+
+  if(ind <= 5):
+
+    Ind_beq = 0.50 * ind
+
+    income_tom.append((Wn+(Ind_beq*(1+r))))
+
+    ind_beq.append(Ind_beq)
+
+  elif(5< ind <=20):
+
+    Ind_beq = 0.50 * ind
+
+    income_tom.append((Wn+(Ind_beq*(1+r))))
+
+    ind_beq.append(Ind_beq)
+
+  elif(20 < ind < 25):
+
+    Ind_beq= 0.50 * ind
+
+    income_tom.append((Ws+(Ind_beq-H)*(1+i)))
+
+    ind_beq.append(Ind_beq)
+
+  elif(ind == 25):
+
+    Ind_beq = 0.50 * ind
+
+       # print(Ind_beq,ind)
+
+    ind_beq.append(Ind_beq)
+
+       # print(ind_beq)
+
+    income_tom.append((Ws+(Ind_beq-H)*(1+r)))
+
+       # print(income_tom))
+
+  elif(ind > 25):
+
+    Ind_beq = 0.50 * ind
+
+    income_tom.append((Ws+(Ind_beq-H)*(1+r)))
+
+    ind_beq.append(Ind_beq)
+
+ 
+
+ 
+
+print(income_tom)
+
+print(ind_beq)
+
+plt.plot(ind_beq,income_tom)
+
+ 
+
+plt.xlabel("Bequest")
+
+plt.ylabel("Income tomorrow")
+
+ 
+
+#plt.plot(Ind_income,income_tom)
+
+# Show the plot
+
+ 
+
+plt.show()
